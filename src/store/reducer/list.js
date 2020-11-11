@@ -2,7 +2,7 @@ export default function list(list = {
     loading: true,
     data:[]
 }, action) {
-    switch(action.type){
+    switch (action.type) {
         case "LIST_LOAD":
             return {
                 loading: true,
