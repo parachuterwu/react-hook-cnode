@@ -1,7 +1,7 @@
 import React from 'react';
 
-const IndexPage = () => {
+const HomePage = () => {
     return <div>首页</div>;
 };
 
-export default IndexPage;
+export default HomePage;
