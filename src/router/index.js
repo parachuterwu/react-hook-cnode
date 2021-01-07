@@ -23,14 +23,14 @@ const routes = [
         },
     },
     {
-        path: '/user/:loginname',
+        path: '/user/:name',
         exact: true,
         render(props) {
             return <UserPage {...props} />;
         },
     },
     {
-        path: '/getstart',
+        path: '/getStart',
         exact: true,
         render(props) {
             return <GetStartPage {...props} />;
@@ -52,4 +52,22 @@ const routes = [
     },
 ];
 
-export { routes };
+const headerNav = [
+    {
+        to: '/',
+        txt: '首页',
+        key: 'home',
+    },
+    {
+        to: '/getStart',
+        txt: '新手入门',
+        key: 'getStart',
+    },
+    {
+        to: '/about',
+        txt: '关于',
+        key: 'about',
+    },
+];
+
+export { routes, headerNav };
