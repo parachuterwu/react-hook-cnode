@@ -1,11 +1,11 @@
 import React from 'react';
 
-import HomePage from '../view/home';
-import TopicPage from '../view/topic';
-import UserPage from '../view/user';
-import GetStartPage from '../view/getStart';
-import AboutPage from '../view/about';
-import Page404 from '../view/page404';
+import HomePage from '../views/home';
+import TopicPage from '../views/topic';
+import UserPage from '../views/user';
+import GetStartPage from '../views/getStart';
+import AboutPage from '../views/about';
+import Page404 from '../views/page404';
 
 const routes = [
     {
@@ -70,4 +70,37 @@ const headerNav = [
     },
 ];
 
-export { routes, headerNav };
+const homeNav = [
+    {
+        txt: '全部',
+        to: '/?tab=all',
+        key: 'all',
+    },
+    {
+        txt: '精华',
+        to: '/?tab=good',
+        key: 'good',
+    },
+    {
+        txt: '分享',
+        to: '/?tab=share',
+        key: 'share',
+    },
+    {
+        txt: '问答',
+        to: '/?tab=ask',
+        key: 'ask',
+    },
+    {
+        txt: '招聘',
+        to: '/?tab=job',
+        key: 'job',
+    },
+    {
+        txt: '客户端测试',
+        to: '/?tab=dev',
+        key: 'dev',
+    },
+];
+
+export { routes, headerNav, homeNav };

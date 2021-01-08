@@ -6,7 +6,7 @@ import { headerNav } from '../router/index';
 
 const Header = () => {
     const { pathname } = useLocation();
-    const currentNav = headerNav.find((nav) => pathname === nav.to).key;
+    const currentNavKey = headerNav.find((nav) => pathname === nav.to).key;
 
     return (
         <Affix offsetTop={0}>
@@ -22,7 +22,7 @@ const Header = () => {
                             <Menu
                                 mode="horizontal"
                                 theme="dark"
-                                selectedKeys={[currentNav]}
+                                selectedKeys={[currentNavKey]}
                             >
                                 {headerNav.map((nav) => {
                                     return (
