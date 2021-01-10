@@ -7,11 +7,15 @@ import { homeNav } from '../router/index';
 
 const HomeNav = () => {
     const { search } = useLocation();
-
-    console.log(qs.parse('a=c'));
+    const { tab } = qs.parse(search.slice(1));
+    const currentNavKey = homeNav.find((nav) => nav.to.indexOf(tab) > -1).key;
 
     return (
-        <Menu mode="horizontal" selectedKeys={['all']} className="index_nav">
+        <Menu
+            mode="horizontal"
+            selectedKeys={[currentNavKey]}
+            className="index_nav"
+        >
             {homeNav.map((item) => {
                 return (
                     <Menu.Item key={item.key}>
