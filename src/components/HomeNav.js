@@ -7,7 +7,7 @@ import { homeNav } from '../router/index';
 
 const HomeNav = () => {
     const { search } = useLocation();
-    const { tab } = qs.parse(search.slice(1));
+    const { tab = 'all' } = qs.parse(search.slice(1));
     const currentNavKey = homeNav.find((nav) => nav.to.indexOf(tab) > -1).key;
 
     return (
