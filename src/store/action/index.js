@@ -18,7 +18,6 @@ const useTopicsList = () => {
                 `/topics?tab=${tab}&page=${page}&limit=${limit}&mdrender=${mdrender}`
             )
             .then((res) => {
-                console.log(res);
                 dispatch({
                     type: 'topics_loadover',
                     data: res.data.data,

@@ -7,7 +7,7 @@ export default function topics(topics = { loading: true, data: [] }, action) {
             };
         case 'topics_loadover':
             return {
-                loading: true,
+                loading: false,
                 data: action.data,
             };
         default:
