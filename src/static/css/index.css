@@ -113,3 +113,11 @@ img {
         width: 1200px;
     }
 }
+
+.topic_link {
+    color: #333;
+}
+
+.topic_link:hover {
+    text-decoration: underline;
+}

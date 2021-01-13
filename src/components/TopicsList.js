@@ -3,6 +3,9 @@ import { List, Col, Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
+import FromNow from './FromNow';
+import TopicTag from './TopicTag';
+
 const TopicsList = (props) => {
     const { data, loading } = props;
     console.log(data);
@@ -19,16 +22,26 @@ const TopicsList = (props) => {
 
                 return (
                     <List.Item>
-                        <Col xs={24} md={20}>
-                            <Link to={`/user/${loginname}`}>
+                        <Col xs={18} sm={20}>
+                            <Link
+                                to={`/user/${loginname}`}
+                                style={{ marginRight: 10 }}
+                            >
                                 <Avatar
+                                    shape="square"
                                     icon={<UserOutlined />}
                                     src={avatar_url}
                                     title={loginname}
                                 />
                             </Link>
+                            <TopicTag tab={tab} top={top} good={good} />
+                            <Link className="topic_link" to={`/topic/${id}`}>
+                                {title}
+                            </Link>
                         </Col>
-                        <Col xs={0} md={4}></Col>
+                        <Col xs={6} sm={4} className="from_now">
+                            <FromNow data={last_reply_at} />
+                        </Col>
                     </List.Item>
                 );
             }}
