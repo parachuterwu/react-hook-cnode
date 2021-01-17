@@ -49,7 +49,7 @@ const useTopic = () => {
             .catch((res) => {
                 dispatch({
                     type: 'topic_error',
-                    error_msg: res.response.data.error_msg,
+                    error_msg: 'some error',
                 });
             });
     };
