@@ -5,6 +5,9 @@ const cnodeServer = axios.create({
     baseURL: 'https://cnodejs.org/api/v1',
 });
 
+/**
+ * Get topic list
+ */
 const useTopicsList = () => {
     const dispatch = useDispatch();
 
@@ -26,4 +29,30 @@ const useTopicsList = () => {
     };
 };
 
-export { useTopicsList };
+const useTopic = () => {
+    const dispatch = useDispatch();
+
+    return (id) => {
+        dispatch({
+            type: 'topic_loading',
+        });
+
+        cnodeServer
+            .get(`/topic/${id}`)
+            .then((res) => {
+                console.log(res);
+                dispatch({
+                    type: 'topic_loadover',
+                    data: res.data.data,
+                });
+            })
+            .catch((res) => {
+                dispatch({
+                    type: 'topic_error',
+                    error_msg: res.response.data.error_msg,
+                });
+            });
+    };
+};
+
+export { useTopicsList, useTopic };

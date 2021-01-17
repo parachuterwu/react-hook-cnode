@@ -3,7 +3,7 @@ import { Tag } from 'antd';
 import { homeNav } from '../router/index';
 
 const TopicTag = (props) => {
-    const { tab, top, good } = props;
+    const { tab = 'all', top, good } = props;
 
     const tabTxt = top
         ? '置顶'

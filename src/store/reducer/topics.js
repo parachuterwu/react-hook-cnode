@@ -1,4 +1,4 @@
-export default function topics(topics = { loading: true, data: [] }, action) {
+const topics = (topics = { loading: true, data: [] }, action) => {
     switch (action.type) {
         case 'topics_loading':
             return {
@@ -13,4 +13,6 @@ export default function topics(topics = { loading: true, data: [] }, action) {
         default:
             return topics;
     }
-}
+};
+
+export default topics;

@@ -16,7 +16,7 @@ const routes = [
         },
     },
     {
-        path: '/topics/:id',
+        path: '/topic/:id',
         exact: true,
         render(props) {
             return <TopicPage {...props} />;

@@ -6,6 +6,7 @@ import qs from 'qs';
 import { useTopicsList } from '../../store/action';
 import TopicsList from '../../components/TopicsList';
 import HomeNav from '../../components/HomeNav';
+import HomePagination from '../../components/HomePagination';
 
 const HomePage = () => {
     const { data, loading } = useSelector((state) => state.topics);
@@ -21,6 +22,7 @@ const HomePage = () => {
         <div>
             <HomeNav />
             <TopicsList data={data} loading={loading} />
+            {loading ? '' : <HomePagination />}
         </div>
     );
 };

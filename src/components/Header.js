@@ -6,7 +6,8 @@ import { headerNav } from '../router/index';
 
 const Header = () => {
     const { pathname } = useLocation();
-    const currentNavKey = headerNav.find((nav) => pathname === nav.to).key;
+    const currentNav = headerNav.find((nav) => pathname === nav.to);
+    const currentNavKey = currentNav ? currentNav.key : '';
 
     return (
         <Affix offsetTop={0}>

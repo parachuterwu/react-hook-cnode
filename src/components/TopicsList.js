@@ -8,7 +8,6 @@ import TopicTag from './TopicTag';
 
 const TopicsList = (props) => {
     const { data, loading } = props;
-    console.log(data);
 
     return (
         <List
