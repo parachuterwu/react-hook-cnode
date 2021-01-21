@@ -40,7 +40,6 @@ const useTopic = () => {
         cnodeServer
             .get(`/topic/${id}`)
             .then((res) => {
-                console.log(res);
                 dispatch({
                     type: 'topic_loadover',
                     data: res.data.data,

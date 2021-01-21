@@ -4,6 +4,8 @@ import { useParams, useHistory } from 'react-router-dom';
 import { Alert } from 'antd';
 
 import { useTopic } from '../../store/action';
+import TopicDetail from '../../components/TopicDetail';
+import TopicReplies from '../../components/TopicReplies';
 
 const TopicPage = (props) => {
     const { id } = useParams();
@@ -35,7 +37,8 @@ const TopicPage = (props) => {
                 />
             ) : (
                 <Fragment>
-                    <div>apple</div>
+                    <TopicDetail data={data} loading={loading} />
+                    <TopicReplies data={data.replies} loading={loading} />
                 </Fragment>
             )}
         </div>

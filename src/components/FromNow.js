@@ -6,9 +6,9 @@ dayjs.locale('zh-cn');
 dayjs.extend(relativeTime);
 
 const FromNow = (props) => {
-    const { data } = props;
+    const { date } = props;
 
-    return dayjs(data).fromNow();
+    return dayjs(date).fromNow();
 };
 
 export default FromNow;

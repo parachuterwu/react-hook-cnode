@@ -16,7 +16,7 @@ const TopicsList = (props) => {
             dataSource={data}
             renderItem={(item) => {
                 // prettier-ignore
-                const { author, last_reply_at, good, top, tab, title, id } = item;
+                const { author, last_reply_at, good, top, tab, title, id, reply_count, visit_count } = item;
                 const { loginname, avatar_url } = author;
 
                 return (
@@ -33,13 +33,14 @@ const TopicsList = (props) => {
                                     title={loginname}
                                 />
                             </Link>
+                            <div className="reply_visit_count">{`${reply_count}/${visit_count}`}</div>
                             <TopicTag tab={tab} top={top} good={good} />
                             <Link className="topic_link" to={`/topic/${id}`}>
                                 {title}
                             </Link>
                         </Col>
                         <Col xs={6} sm={4} className="from_now">
-                            <FromNow data={last_reply_at} />
+                            <FromNow date={last_reply_at} />
                         </Col>
                     </List.Item>
                 );
